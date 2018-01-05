@@ -1,0 +1,106 @@
+* {
+    font-family: 'Titillium Web', sans-serif;
+    box-sizing: border-box;
+}
+
+hr {
+    display: block;
+    margin: 20px auto;
+    border: 3px inset #00003b;
+}
+
+body {
+    background: linear-gradient(-75deg, #ffb5ba 5%, #baddd6);
+}
+
+.logo {
+    width: auto;
+    height: 140px;
+    margin: 0;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+#header {
+    text-align: right;
+    width: 100%;
+}
+
+.heading {
+    font-weight: 100;
+    font-size: 50px;
+}
+
+.ftr {
+    margin-top: 20px;
+    color: #00003b;
+}
+
+.border {
+    border: 4px outset;
+}
+
+.border2 {
+    border: 10px double #00003b;
+}
+
+.c {
+    width: 85%;
+    margin-left: 35px;
+}
+
+.drag {
+    width: 87%;
+    margin-left: 35px;
+}
+
+.flexDsp {
+    display: flex;
+}
+
+h2 {
+    margin-top: 5px;
+}
+
+.bold {
+    font-weight: 900;
+}
+
+.env {
+    padding-left: 30px;
+}
+
+.rang {
+    margin: auto;
+    width: 84.5%;
+    padding: 0 20px 0 20px;
+}
+
+.bgcol {
+    background: white;
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+}
+
+.self {
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .logo {
+        width: auto;
+        height: 80px;
+        border-radius: 50%;
+        margin-top: 20px;
+    }
+    .heading {
+        font-weight: 100;
+        font-size: 2em;
+    }
+}
