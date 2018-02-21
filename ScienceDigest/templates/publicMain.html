@@ -1,0 +1,16 @@
+{% include "main.html" %}
+	<title>Science Digest</title>
+</head>
+<body>
+	{% include "header.html" %}
+	{% for i in categories %}
+		<a href="{{url_for('categoryItems', category_name = i.name)}}"><h2>{{i.name}}</h2></a>
+	{% endfor %}
+	{% for article in articles %}
+		<a href="{{url_for('itemDetails',category_name = article.category_name, articleTitle = article.title)}} ">
+			<h2>{{article.title}}{{article.user_id}}</h2>
+		</a>
+		<p>{{article.time}}</p>
+	{% endfor %}
+</body>
+</html>

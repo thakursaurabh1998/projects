@@ -1,0 +1,58 @@
+{% include "main.html" %}
+	<title>Edit Article</title>
+</head>
+<body>
+	{% include "header.html" %}
+	<div class="container content">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Edit Article</h1>
+			</div>
+		</div>
+		<div class="row form">
+			<form method="post" action="{{url_for('itemEdit',articleTitle = article.title)}}">
+				<div class="row formI">
+					<div class="col-md-3">
+						<label>Title</label>
+					</div>
+					<div class="col-md-9 placeholder">
+						<input class="width" type="text" name="title" value="{{article.title}}">
+					</div>
+				</div>
+				<div class="row formI">
+					<div class="col-md-3">
+						<label>Description</label>
+					</div>
+					<div class="col-md-9 placeholder">
+						<textarea rows="7" cols="60" name="description">{{article.about}}</textarea>
+					</div>
+				</div>
+				<div class="row formI">
+					<div class="col-md-3">
+						<label>Category</label>
+					</div>
+					<div class="col-md-9 placeholder">
+						<select name="category" class="width">
+							{% for category in categories %}
+								<option value="{{category.name}}">{{category.name}}</option>
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+				<div class="row formI">
+					<div class="col-md-3">
+						<label>Add an image: </label>
+					</div>
+					<div class="col-md-9 placeholder">
+						<input class="width" type="text" name="picture" value={{article.picture}}>
+					</div>
+				</div>
+				<div class="row formI">
+					<div class="col-md-3">
+						<input type="submit" class="btn btn-danger submitBtn" value="Edit">
+					</div>
+				</div>
+			</form>
+		</div>
+</body>
+</html>

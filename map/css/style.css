@@ -1,0 +1,118 @@
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+
+#map {
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    right: 0px;
+}
+
+#wrapper {
+    position: relative;
+}
+
+.noflex {
+    width: 100%;
+}
+
+.nopadding {
+    padding: 0;
+}
+
+.header-collapse {
+    cursor: default;
+    padding: 0;
+    width: 56px;
+    background-color: #fff0;
+}
+
+.search-btn2-pos {
+	margin-top: 15px;
+}
+
+.btn-pos {
+	margin-top: 20px;
+}
+
+.borderN {
+    border: 0;
+    box-shadow: 0 0 0 #fff0;
+}
+
+.floating-panel-close {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    z-index: 5;
+    max-height: 98%;
+}
+
+.overflow-save{
+    overflow:auto;
+    height:30vh;
+}
+
+.row-corrector {
+    margin-bottom: 13px;
+}
+
+.floating-panel-open {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    z-index: 5;
+    right:14px;
+    max-height: 98%;
+}
+
+.gps-floating-panel {
+    position: absolute;
+    top:46px;
+    right:14px;
+    z-index: 5;
+    width: 56px;
+    height: 56px;
+}
+
+.tap-target {
+    color: #fff;
+    background-color: #2bbbad;
+    a {
+        color: #fff;
+        text-decoration: underline;
+    }
+}
+
+::placeholder{
+    opacity: 0;
+}
+
+.full {
+    width: 100%;
+}
+
+@media only screen and (min-width: 570px){
+
+    .noflex {
+        width: 500px;
+    }
+    
+    .explore-button {
+        right: calc(100%-570px);
+    }
+
+    .floating-panel-open {
+        position: absolute;
+        bottom: 14px;
+        left: 14px;
+        z-index: 5;
+        right: calc( 100% - 519px );
+        max-height: 98%;
+    }
+}

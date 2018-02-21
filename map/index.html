@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Maps</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css" media="screen,projection">
+    <link rel="stylesheet" href="css/style.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div id="map"></div>
+    <div class="gps-floating-panel" data-bind="click: changePlace"><a data-bind="click: runGPS" id="gps" class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons">my_location</i></a></div>
+    <div class="floating-panel-close" id="float">
+        <ul class="collapsible noshadow borderN" data-collapsible="accordion">
+            <li>
+                <div class="collapsible-header header-collapse borderN">
+                    <a id="menu" class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons">explore</i></a>
+                </div>
+                <div class="collapsible-body nopadding borderN">
+                    <div class="row row-corrector">
+                        <div class="noflex">
+                            <div class="card">
+                                <div class="card-content">
+                                    <div class="row row-corrector">
+                                        <div class="col s12">
+                                            <h5 id="title">Search nearby locations</h5>
+                                        </div>
+                                    </div>
+                                    <div class="row row-corrector">
+                                        <div class="input-field col s9">
+                                            <i class="material-icons prefix search-btn2-pos">search</i>
+                                            <input id="search-bar-text" type="text" class="validate">
+                                            <label for="search-bar-text">Enter places to search</label>
+                                        </div>
+                                        <div class="col s2">
+                                            <button class="btn-pos btn btn-small waves-effect waves-light blue" type="submit" id="search-button" name="action" data-bind="click: searchBTN"><i class="material-icons">search</i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="row row-corrector">
+                                        <div class="col input-field s6">
+                                            <select data-bind="options: categoryList, optionsCaption: 'All...', value: currentCategory"></select>
+                                            <label>Places</label>
+                                        </div>
+                                        <div class="col s6">
+                                            <span data-bind="click: populate.bind($data)"><button data-bind="click: changePlace" class="btn-pos full btn btn-small waves-effect waves-light blue" id="marker-disp">
+                                                <i class="material-icons right">place</i>Show
+                                            </button></span>
+                                        </div>
+                                    </div>
+                                    <div class="card-content overflow-save">
+                                        <div class="collection" data-bind="foreach: listPlaces">
+                                            <a href="#" class="collection-item" data-bind="text: $data, click: $parent.showParticularMarker.bind($data)"></a>
+                                        </div>
+                                    </div>
+                                    <div class="footer-copyright card-content">
+                                        <div class="container">
+                                            <p class="grey-text text-lighten-1 right">Data taken from Foursquare API</p>                                          
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/knockout.js"></script>
+    <script src="materialize/js/materialize.min.js"></script>
+    <script src="js/app.js"></script>
+    <script async defer onerror="errorCallbackMap()" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBZmyyZG4VReSyxvi9tgTf7KbM7ElSgnn4&v=3&callback=initMap"></script>
+</body>
+
+</html>

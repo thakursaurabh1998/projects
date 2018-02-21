@@ -1,0 +1,62 @@
+{% include "main.html" %}
+	<title>New Article</title>
+</head>
+<body>
+	{% include "header.html" %}
+	<div class="container content">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Add new article</h1>
+			</div>
+		</div>
+		<div class="row form">
+			<form method="post" action="{{url_for('itemAdd')}}">
+				<div class="row formI">
+					<div class="col-md-3">
+						<label>Title</label>
+					</div>
+					<div class="col-md-9 placeholder">
+						<input class="width" type="text" name="title" placeholder="Enter title">
+					</div>
+				</div>
+				<div class="row formI">
+					<div class="col-md-3">
+						<label>Description</label>
+					</div>
+					<div class="col-md-9 placeholder">
+						<textarea rows="7" cols="60" name="description" placeholder="Enter description"></textarea>
+					</div>
+				</div>
+				<div class="row formI">
+					<div class="col-md-3">
+						<label>Category</label>
+					</div>
+					<div class="col-md-9 placeholder">
+						<select name="category" class="width">
+							{% for category in categories %}
+								<option value="{{category.name}}">{{category.name}}</option>
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+				<div class="row formI">
+					<div class="col-md-3">
+						<label>Add an image: </label>
+					</div>
+					<div class="col-md-9 placeholder">
+						<input class="width" type="text" name="picture" placeholder="Enter link">
+					</div>
+				</div>
+				<div class="row formI">
+					<div class="col-md-3">
+						<input type="submit" class="btn btn-primary submitBtn" value="Add">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+
+

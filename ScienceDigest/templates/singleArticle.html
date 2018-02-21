@@ -1,0 +1,36 @@
+{% include "main.html" %}
+	<title>{{article.title}}</title>
+</head>
+<body>
+	{% include "header.html" %}
+	<div class="container content">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>{{article.title}}</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<p>{{article.time[:10]}}</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<img class="picture img-responsive" src="{{article.picture}}">
+			</div>
+		</div>
+		<div class="row margin-t">
+			<div class="col-md-12">
+				<p>{{article.about}}</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3 rightAlign"><img class="avatar2" src="{{user.picture}}">
+			</div>
+			<div class="col-md-4 rightAlign">Submitted By: {{user.name}}
+			</div>
+		</div>
+		
+	</div>
+</body>
+</html>

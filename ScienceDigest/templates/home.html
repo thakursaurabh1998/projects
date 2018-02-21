@@ -1,0 +1,27 @@
+{% include "main.html" %}
+	<title>Science Digest</title>
+</head>
+<body>
+		{% include "header.html" %}
+		<div class="container content">
+			<div class="row">
+				<div class="col-md-4">
+					<a href="{{url_for('itemAdd')}}">
+						<button class="btn btn-lg myButton">Add Article <span class="glyphicon glyphicon-plus plusbtn" aria-hidden="true"></span></button>
+					</a>
+				</div>
+			</div>
+			{% for article in articles %}
+			<div class="row">
+				<a href="{{url_for('itemDetails',category_name = article.Articles.category_name, articleTitle = article.Articles.title)}} ">
+					<div class="col-md-8 myWell">
+						<h3>{{article.Articles.title}}</h2>
+						<p>{{article.Articles.time[:10]}}</p>
+						<p>Submitted by User: {% if not article.User.name %}Anonymous{% endif %}{{article.User.name}}</p>
+					</div>
+				</a>
+			</div>
+			{% endfor %}
+		</div>
+</body>
+</html>
